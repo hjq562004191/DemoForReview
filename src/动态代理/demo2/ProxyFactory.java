@@ -30,24 +30,30 @@ public class ProxyFactory {
                 return result;
             }
         };
-        Object proxyObject = Proxy.newProxyInstance(loader,interfaces,handler);
+        Object proxyObject = Proxy.newProxyInstance(loader, interfaces, handler);
         return proxyObject;
     }
+
     public Object getTargetObject() {
         return targetObject;
     }
+
     public void setTargetObject(Object targetObject) {
         this.targetObject = targetObject;
     }
+
     public BeforeAdvice getBeforeAdvice() {
         return beforeAdvice;
     }
+
     public void setBeforeAdvice(BeforeAdvice beforeAdvice) {
         this.beforeAdvice = beforeAdvice;
     }
+
     public AfterAdvice getAfterAdvice() {
         return afterAdvice;
     }
+
     public void setAfterAdvice(AfterAdvice afterAdvice) {
         this.afterAdvice = afterAdvice;
     }

@@ -8,12 +8,12 @@ public class 递归遍历目录下的所有文件 {
         AllFiles(file);
     }
 
-    public static void AllFiles(File file){
-        if (file.isFile()){
+    public static void AllFiles(File file) {
+        if (file.isFile()) {
             System.out.println(file.getName());
-        }else {
-            for (File f:file.listFiles()
-                    ) {
+        } else {
+            for (File f : file.listFiles()
+            ) {
                 AllFiles(f);
             }
         }

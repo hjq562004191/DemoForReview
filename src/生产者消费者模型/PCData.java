@@ -17,6 +17,6 @@ public final class PCData {
 
     @Override
     public String toString() {
-        return "data:"+intData;
+        return "data:" + intData;
     }
 }

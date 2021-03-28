@@ -4,7 +4,7 @@ import java.text.MessageFormat;
 import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
-public class C implements Runnable{
+public class C implements Runnable {
 
     private static volatile boolean isrunning = true;
 
@@ -17,14 +17,14 @@ public class C implements Runnable{
     @Override
     public void run() {
         Random r = new Random();
-        while (isrunning){
-            if (!queue.isEmpty()){
+        while (isrunning) {
+            if (!queue.isEmpty()) {
                 try {
                     Thread.sleep(r.nextInt(1000));
                     data d = queue.take();
-                    int re = d.getNum()*d.getNum();
+                    int re = d.getNum() * d.getNum();
                     System.out.println(MessageFormat.format("{0}*{1}={2}",
-                            d.getNum(),d.getNum(),re));
+                            d.getNum(), d.getNum(), re));
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -32,7 +32,7 @@ public class C implements Runnable{
         }
     }
 
-    public static void stop(){
+    public static void stop() {
         isrunning = false;
     }
 }

@@ -3,7 +3,7 @@ package 静态代理;
 public class Proxyrole implements Proxy {
     private Proxy real;
 
-    public Proxyrole(Proxy realrole){
+    public Proxyrole(Proxy realrole) {
         real = realrole;
     }
 

@@ -8,23 +8,25 @@ import java.lang.reflect.Proxy;
 
 public class demo {
     @Test
-    public void fun(){
+    public void fun() {
         waiter ManWaiter = new ManWaiter();
 
         ClassLoader loader = this.getClass().getClassLoader();
         Class[] interfaces = {waiter.class};
         InvocationHandler handler = new WaiterInvocationHandler(ManWaiter);
 
-        waiter waiterProxy = (waiter) Proxy.newProxyInstance(loader,interfaces,handler);
+        waiter waiterProxy = (waiter) Proxy.newProxyInstance(loader, interfaces, handler);
         waiterProxy.serve();
     }
 }
-class WaiterInvocationHandler implements InvocationHandler{
+
+class WaiterInvocationHandler implements InvocationHandler {
     private waiter waiter;
 
-    public WaiterInvocationHandler(waiter waiter){
+    public WaiterInvocationHandler(waiter waiter) {
         this.waiter = waiter;
     }
+
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
         System.out.println("欢迎光临");

@@ -5,10 +5,11 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class P implements Runnable{
+public class P implements Runnable {
     private static volatile boolean isrunning = true;
     private static BlockingQueue<data> queue = null;
     private static AtomicInteger integer = new AtomicInteger(0);
+
     public P(BlockingQueue<data> queue1) {
         queue = queue1;
     }
@@ -29,7 +30,7 @@ public class P implements Runnable{
         }
     }
 
-    public static void stop(){
+    public static void stop() {
         isrunning = false;
     }
 

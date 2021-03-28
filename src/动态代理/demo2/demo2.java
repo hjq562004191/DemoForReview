@@ -4,7 +4,7 @@ import org.junit.Test;
 
 public class demo2 {
     @Test
-    public void fun2(){
+    public void fun2() {
         ProxyFactory factory = new ProxyFactory();
         factory.setTargetObject(new ManWaiter());
         factory.setBeforeAdvice(new BeforeAdvice() {

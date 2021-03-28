@@ -27,9 +27,9 @@ public class Producer implements Runnable {
 
                 Thread.sleep(r.nextInt(SLEEP_TIME));
                 data = new PCData(count.incrementAndGet());
-                System.out.println(data+"已经放进缓存区");
-                if (!queue.offer(data,2, TimeUnit.SECONDS)){
-                    System.out.println(data+"放入缓存失败");
+                System.out.println(data + "已经放进缓存区");
+                if (!queue.offer(data, 2, TimeUnit.SECONDS)) {
+                    System.out.println(data + "放入缓存失败");
                 }
             }
         } catch (InterruptedException e) {
@@ -37,7 +37,8 @@ public class Producer implements Runnable {
             Thread.currentThread().interrupt();
         }
     }
-    public void stop(){
+
+    public void stop() {
         isRunning = false;
     }
 }

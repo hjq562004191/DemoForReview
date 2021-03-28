@@ -13,8 +13,8 @@ public class StackTest<T> {
     }
 
     public void push(T m) {
-            arr[top] = m;
-            top++;
+        arr[top] = m;
+        top++;
     }
 
     public T pop() {
@@ -42,9 +42,9 @@ public class StackTest<T> {
 
     public static void main(String[] args) {
         StackTest<Person> stack = new StackTest<>(Comparator.comparing(Person::getName));
-        stack.push(new Person(1,"zaaaa"));
-        stack.push(new Person(2,"bbbbb"));
-        stack.push(new Person(3,"acccc"));
+        stack.push(new Person(1, "zaaaa"));
+        stack.push(new Person(2, "bbbbb"));
+        stack.push(new Person(3, "acccc"));
         System.out.println(stack.getMin());
         System.out.println(stack.pop());
         System.out.println(stack.getMin());
